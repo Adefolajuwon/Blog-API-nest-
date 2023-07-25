@@ -1,10 +1,15 @@
-import { Controller, Post } from "@nestjs/common";
+import { Body, Controller, Post } from "@nestjs/common";
+import { TodosService } from "./todos.service";
 
 @Controller('products')
-export class productController{
+export class TodosController{
+    constructor(private todoService: TodosService){
+
+
+    }
     @Post()
-    newTodo(): any {
-        
+    addTodo(@Body() completeBody:{name: String; description:String}): any {
+        this.todoService.newTodo(completeBody.name, completeBody.description)
     }
 
 }

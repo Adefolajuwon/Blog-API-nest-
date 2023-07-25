@@ -4,8 +4,9 @@ import {Todo} from "./todo.model"
 
 export class TodosService{
     todo: Todo[] = []  
-    newTodo(name:string, description: string){
-       const newTodo = new Todo()
+    newTodo(name:String, description:String){
+       const newTodo = new Todo(name, description)
+       this.todo.push(newTodo)
     }
 
 }
