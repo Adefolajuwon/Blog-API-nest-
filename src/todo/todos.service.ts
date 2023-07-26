@@ -8,5 +8,4 @@ export class TodosService{
        const newTodo = new Todo(name, description)
        this.todo.push(newTodo)
     }
-
 }

@@ -4,8 +4,6 @@ import { TodosService } from "./todos.service";
 @Controller('products')
 export class TodosController{
     constructor(private todoService: TodosService){
-
-
     }
     @Post()
     addTodo(@Body() completeBody:{name: String; description:String}): any {
