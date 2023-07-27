@@ -4,9 +4,12 @@ import {Todo} from "./todo.model"
 
 export class TodosService{
     todo: Todo[] = []  
-    insertTodo(name:String, description:String){
-       const newTodo = new Todo(name, description)
-       this.todo.push(newTodo)
-       return newTodo
+ async createTodo(name: string, desc:string,) => {
+    try {
+        
+    } catch (error) {
+        
     }
+    
+ }
 }
