@@ -1,4 +1,4 @@
-import { Injectable, Get } from "@nestjs/common";
+import { Injectable,HttpException, HttpStatus,} from "@nestjs/common";
 import { InjectModel } from '@nestjs/mongoose';
 import { Todo } from "./todo.model";
 import { Model } from 'mongoose';
@@ -12,9 +12,14 @@ export class TodosService{
 
  async createTodo(name: string, desc:string,) {
     try {
-        const todo = await 
+         const newTodo = await this.todoModel.create({
+            name,
+            desc
+         })
+         return newTodo
     } catch (error) {
-        
+      throw new HttpException('An error occured', HttpStatus.INTERNAL_SERVER_ERROR)
+
     }
     
  }
