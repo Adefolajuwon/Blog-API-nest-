@@ -10,7 +10,10 @@ export class TodosController{
     @HttpCode(201)
     // @ApiOperation({summary: "Create a todo item"})
     @Post()
-    async addTodo(@Body('name')prodName: string, @Body('desc') prodDesc: string,){}
+    async addTodo(@Body('name')prodName: string, @Body('desc') prodDesc: string,){
+        const todo = this.todoService.createTodo(prodName, prodDesc)
+        return todo
+    }
    
 
 
