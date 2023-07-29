@@ -6,10 +6,5 @@ import { TodosService } from "./todos.service";
 export class TodosController{
     constructor(private todoService: TodosService){
     }
-    @Post()
-    addTodo(@Body('name') Name: String,    @Body('description') Description: string,
-    ) {
-       const newTodo =  this.todoService.insertTodo(Name, Description)
-       return {todo: newTodo}
-    }
+
 }
