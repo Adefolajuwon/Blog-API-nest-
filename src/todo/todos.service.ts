@@ -22,4 +22,14 @@ export class TodosService{
 
     }
  }
+ async getTodo(name: string){
+   try {
+      const todo = await this.todoModel.findOne({"name": name})
+      return todo
+   } catch (error) {
+      console.log(error)
+      throw new HttpException('An error occured', HttpStatus.NOT_FOUND)
+   }
+ }
+
 }
