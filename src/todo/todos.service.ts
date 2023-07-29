@@ -4,7 +4,6 @@ import { Todo } from "./todo.model";
 import { Model } from 'mongoose';
 
 @Injectable()
-
 export class TodosService{
    constructor(
       @InjectModel('Todo') private readonly todoModel: Model<Todo>,
@@ -18,9 +17,9 @@ export class TodosService{
          })
          return newTodo
     } catch (error) {
+      console.log(error)
       throw new HttpException('An error occured', HttpStatus.INTERNAL_SERVER_ERROR)
 
     }
-    
  }
 }
