@@ -31,5 +31,4 @@ export class TodosService{
       throw new HttpException('An error occured', HttpStatus.NOT_FOUND)
    }
  }
-
 }
