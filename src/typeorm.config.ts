@@ -9,7 +9,7 @@ const typeOrmConfig: TypeOrmModuleOptions = {
     password: 'tremothegoat',
     database: 'bloguser',
     entities: [__dirname + '/**/*.entity{.ts,.js}'],
-    synchronize: true, // Auto-create tables (in development only)
+    synchronize: true,
 };
 
 export default typeOrmConfig;

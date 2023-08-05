@@ -10,6 +10,7 @@ import typeOrmConfig from './typeorm.config';
 
 @Module({
   imports: [
+    TypeOrmModule.forRoot(typeOrmConfig),
     todosModule,
     MongooseModule.forRoot(
       'mongodb+srv://juwon:tremothegoat@cluster0.lary7db.mongodb.net/?retryWrites=true&w=majority',
