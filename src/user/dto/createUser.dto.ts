@@ -5,5 +5,4 @@ export class createUserDto{
    readonly username: string
    @IsEmail()
    readonly email: string
-
 }
