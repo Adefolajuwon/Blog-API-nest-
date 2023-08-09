@@ -24,7 +24,6 @@ export class UserService {
 
       return createdUser; // Return the created user
     } catch (error) {
-      // Handle any errors that might occur during the database query or creation process
       throw new HttpException('Failed to create user', HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
