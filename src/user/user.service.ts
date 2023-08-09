@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, HttpException, HttpStatus } from "@nestjs/common";
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './user.entity';
@@ -19,8 +19,7 @@ export class UserService{
             throw new Error('User with this email already exists');
           }
       
-          // If the code reaches this point, it means the user doesn't exist
-          // You can proceed to create the new user
+
           const newUser = this.userRepository.create(dto);
           const createdUser = await this.userRepository.save(newUser);
       
@@ -28,7 +27,7 @@ export class UserService{
       
         } catch (error) {
           // Handle any errors that might occur during the database query or creation process
-          throw new Error('Failed to create user');
+          throw new HttpException('Failed to create user', HttpStatus.INTERNAL_SERVER_ERROR);
         }
       }
       
