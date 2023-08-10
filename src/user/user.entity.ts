@@ -1,6 +1,6 @@
 
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
-
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Blog } from 'src/blog/blog.entityl';
 @Entity()
 export class User {
   @PrimaryGeneratedColumn()
@@ -8,8 +8,10 @@ export class User {
 
   @Column()
   username: string;
-
   @Column()
-  email: string;
+  title: string;
+
+  @OneToMany(() => Blog, blog => blog.user)
+  blogs: Blog[]
 
 }
