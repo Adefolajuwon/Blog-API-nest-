@@ -6,6 +6,8 @@ export class Blog{
     id: number;
     @Column()
     content: string;
+    @Column()
+    title: string
   @ManyToOne(() => User, user => user.blogs)
   user: User;
 
