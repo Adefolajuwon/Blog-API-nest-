@@ -10,6 +10,4 @@ export class Blog{
     title: string
   @ManyToOne(() => User, user => user.blogs)
   user: User;
-
-
 }
