@@ -1,5 +1,4 @@
-
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany,  } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 import { Blog } from 'src/blog/blog.entityl';
 import { isEmail } from 'class-validator';
 @Entity()
@@ -8,7 +7,7 @@ export class User {
   id: number;
 
   @Column()
-  username: string;
+  user: string;
 
   @Column()
   email: string;
@@ -16,7 +15,6 @@ export class User {
   @Column()
   title: string;
 
-  @OneToMany(() => Blog, blog => blog.user)
-  blogs: Blog[]
-
+  @OneToMany(() => Blog, (blog) => blog.user)
+  blogs: Blog[];
 }

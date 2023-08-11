@@ -7,7 +7,7 @@ export class blogController{
  @HttpCode(201)
  @Post()
  async addBlog(
-    @Body()createDto: createBlogDto, @Body('user')user: string
+    @Body()createDto: createBlogDto, @Body('user')user
  ){
 const blog = await this.blogservice.createBlog(createDto, user)
 return blog
