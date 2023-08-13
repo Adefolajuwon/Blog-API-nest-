@@ -22,8 +22,9 @@ export class blogService {
 
       return savedBlog;
     } catch (error) {
+      console.log(error);
       throw new HttpException(
-        'Failed to create blog',
+        'Failed to create blog.',
         HttpStatus.INTERNAL_SERVER_ERROR,
       );
     }
